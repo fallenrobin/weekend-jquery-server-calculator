@@ -36,13 +36,12 @@ function handleSubmit() {//POST a set of numbers to server
     let operator = operatorClicked; //uses the stored 'click record'
     let secondNumber = $('#secondNumber').val();
 
-
     $.ajax({
         url: '/mathResults',
         method: 'POST',
         data: {
             firstNumber: firstNumber,
-            operator: operator,
+            operator: operatorClicked,
             secondNumber: secondNumber,
         }
     }).then(function (response) {
