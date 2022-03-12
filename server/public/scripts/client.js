@@ -14,16 +14,16 @@ function handleReady() {
 let operatorClicked = '';// this is a variable to store which operator button
 //  was clicked so it goes into the object for the server
 
-function setAddition() {
+function setAddition() {//Note: if I have time, I'm going to refactor all these to use '.this'
     operatorClicked = '+';
 }
 function setSubtraction() {
     operatorClicked = '-';
 
-}function setMultiplication() {
+} function setMultiplication() {
     operatorClicked = '*';
 
-}function setDivision() {
+} function setDivision() {
     operatorClicked = '/';
 }
 
@@ -62,9 +62,13 @@ function getMathResults() { //GET so as to append calculation answer to DOM
         method: 'GET'
     }).then(function (response) {
         console.log(response);
-        //   render(response);
+        render(response);
     }).catch(function (error) {
         console.log(error);
         alert('error in get!')
     })
+}
+
+function render(response) {
+    $('#answerSpan').text('hello');
 }

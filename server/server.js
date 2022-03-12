@@ -5,6 +5,7 @@ const app = express();
 const PORT = 5000;
 
 let mathArray = [];
+let solutionHistory = [];
 
 // This must be added before GET & POST routes.
 app.use(bodyParser.urlencoded({extended:true}))
