@@ -61,13 +61,45 @@ function getMathResults() { //GET so as to append calculation answer to DOM
         method: 'GET'
     }).then(function (response) {
         console.log(response);
-        render(response);
+        renderAnswer(response);
+        
+    }).catch(function (error) {
+        console.log(error);
+        alert('error in get!')
+    })
+    $.ajax({
+        url: '/calculationHistory',
+        method: 'GET'
+    // getCalculationHistory();
+}).then(function (response) {
+    console.log(response);
+    // renderAnswer(response);
+})
+}
+
+function getCalculationHistory() {
+    $.ajax({
+        url: '/calculationHistory',
+        method: 'GET'
+    }).then(function (response) {
+        console.log(response);
+        // renderAnswerHistory(response);
     }).catch(function (error) {
         console.log(error);
         alert('error in get!')
     })
 }
 
-function render(response) {
-    $('#answerSpan').text('hello');
+function renderAnswer(response) {
+    $('#answerSpan').text(response[response.length - 1]);
 }
+// function renderAnswerHistory(response) {
+//     $('#history').empty();
+//         for (let index = 0; index < response.length; index++) {
+//             $('#history').prepend(`
+//                 <li><li>
+//             `);
+//         }
+ 
+// }
+

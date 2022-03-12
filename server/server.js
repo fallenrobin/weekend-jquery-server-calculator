@@ -4,28 +4,31 @@ const res = require('express/lib/response');
 const app = express();
 const PORT = 5000;
 
-let mathArray = [];
-let solutionHistory = [];
+let calculationHistory = [];
+let answerHistory = [];
 
-// This must be added before GET & POST routes.
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// Serve up static files (HTML, CSS, Client JS)
+// Serves up static files (HTML, CSS, Client JS)
 app.use(express.static('server/public'));
 
 app.post('/mathResults', (req, res) => {
     console.log('POST mathResults', req.body);
     //res.sendStatus(200);//the 200 means "ok"
     res.sendStatus(201);//tells us something was created
-    mathArray.push(req.body);
-    // console.log(mathArray);
+    calculationHistory.push(req.body);
+    // console.log(calculationHistory);
     runCalculation(req.body);
 })
 
 app.get('/mathResults', (req, res) => {
     console.log('GET mathResults');
-    res.send(solutionHistory);
-    //actually need [solutionHistory.length-1]
+    res.send(answerHistory);
+})
+
+app.get('/calculationHistory', (req, res) => {
+    console.log('GET calculationHistory');
+    res.send(calculationHistory);
 })
 
 function runCalculation(taco) {
@@ -35,31 +38,31 @@ function runCalculation(taco) {
     switch (button) {
         case '+':
             answer = inputOne + inputTwo;
-            solutionHistory.push(answer);
-            mathArray.push(`${inputOne}+${button}+${inputTwo}`);
+            answerHistory.push(answer);
+            calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
             break;
         case '-':
             answer = (inputOne - inputTwo);
-            solutionHistory.push(answer);
-            mathArray.push(`${inputOne}+${button}+${inputTwo}`);
+            answerHistory.push(answer);
+            calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
             break;
         case '*':
             answer = (inputOne * inputTwo);
-            solutionHistory.push(answer);
-            mathArray.push(`${inputOne}+${button}+${inputTwo}`);
+            answerHistory.push(answer);
+            calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
             break;
         case '/':
             answer = (inputOne / inputTwo);
-            solutionHistory.push(answer);
-            mathArray.push(`${inputOne}+${button}+${inputTwo}`);
+            answerHistory.push(answer);
+            calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
             break;
         default:
             break;
     }
-    // solutionHistory.push(answer);
-    // mathArray.push(`${inputOne}+${button}+${inputTwo}`);
-    console.log(solutionHistory);
-    console.log(mathArray);
+    // answerHistory.push(answer);
+    // calculationHistory.push(`${inputOne}+${button}+${inputTwo}`);
+    console.log(answerHistory);
+    console.log(calculationHistory);
 }
 
 
