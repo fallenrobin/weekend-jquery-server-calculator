@@ -73,7 +73,7 @@ function getMathResults() { //GET so as to append calculation answer to DOM
     // getCalculationHistory();
 }).then(function (response) {
     console.log(response);
-    // renderAnswer(response);
+    renderAnswerHistory(response);
 })
 }
 
@@ -93,13 +93,13 @@ function getCalculationHistory() {
 function renderAnswer(response) {
     $('#answerSpan').text(response[response.length - 1]);
 }
-// function renderAnswerHistory(response) {
-//     $('#history').empty();
-//         for (let index = 0; index < response.length; index++) {
-//             $('#history').prepend(`
-//                 <li><li>
-//             `);
-//         }
+function renderAnswerHistory(calculations) {
+    $('#history').empty();
+        for (let calculation of calculations) {
+            $('#history').prepend(`
+                <li>${calculation}<li>
+            `);
+        }
  
-// }
+}
 

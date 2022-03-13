@@ -16,7 +16,7 @@ app.post('/mathResults', (req, res) => {
     console.log('POST mathResults', req.body);
     //res.sendStatus(200);//the 200 means "ok"
     res.sendStatus(201);//tells us something was created
-    calculationHistory.push(req.body);
+    // calculationHistory.push(req.body);
     // console.log(calculationHistory);
     runCalculation(req.body);
 })
