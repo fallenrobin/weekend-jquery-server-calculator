@@ -99,6 +99,5 @@ function renderAnswerHistory(calculations) {
                 <h2>${calculation}<h2>
             `);
         }
- 
 }
 

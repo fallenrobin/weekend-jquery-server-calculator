@@ -12,13 +12,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Serves up static files (HTML, CSS, Client JS)
 app.use(express.static('server/public'));
 
+//this accepts the user inputs for a calculation
 app.post('/mathResults', (req, res) => {
     console.log('POST mathResults', req.body);
     //res.sendStatus(200);//the 200 means "ok"
     res.sendStatus(201);//tells us something was created
     // calculationHistory.push(req.body);
     // console.log(calculationHistory);
-    runCalculation(req.body);
+    runCalculation(req.body);//this calls the actual math to run
 })
 
 app.get('/mathResults', (req, res) => {
@@ -31,6 +32,7 @@ app.get('/calculationHistory', (req, res) => {
     res.send(calculationHistory);
 })
 
+//this will run the user input through the actual calculations
 function runCalculation(taco) {
     let inputOne = Number(taco.firstNumber);
     let button = taco.operator;
@@ -46,12 +48,12 @@ function runCalculation(taco) {
             answerHistory.push(answer);
             calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
             break;
-        case '*':
+        case 'x':
             answer = (inputOne * inputTwo);
             answerHistory.push(answer);
             calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
             break;
-        case '/':
+        case '÷':
             answer = (inputOne / inputTwo);
             answerHistory.push(answer);
             calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
