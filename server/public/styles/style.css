@@ -88,9 +88,9 @@ input {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid #a18e67;
+  border: 1px solid #a18e67;
   border-radius: 8px;
-  box-shadow: 12px 12px 2px 1px rgba(129, 112, 34, 0.2);
+  box-shadow: 8px 10px 2px 1px rgba(80, 69, 21, 0.1);
   margin-bottom: 3%;
   width: 80%;
   padding: 20px;
