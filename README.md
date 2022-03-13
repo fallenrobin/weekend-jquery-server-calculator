@@ -18,7 +18,8 @@ A couple of pitfalls I encountered a long the way were:
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+![Screenshot](server/public/screenshot.png?raw=true "Calculator screenshot")
+
 
 ## Language and tools used on this project
 

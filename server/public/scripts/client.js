@@ -67,7 +67,9 @@ function getMathResults() { //GET so as to append calculation answer to DOM
 }
 
 function renderAnswer(response) {//for current answer
-    $('#answerSpan').text(response[response.length - 1]);//renders only the most recent answer (last index), as a string
+    $('#answerSpan').text(`
+    ${response[response.length - 1]}
+    `);//renders only the most recent answer (last index), as a string
 }
 function renderAnswerHistory(calculations) {//for history of past calculations
     $('#history').empty();
