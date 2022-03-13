@@ -8,11 +8,11 @@ function handleReady() {
 
 }
 
-function setOperator() {
-    operatorClicked = $(this).text();
+function setOperator() {//grabs the operator button text
+    operatorClicked = $(this).text();//sets value of variable to that string
 }
 
-let operatorClicked = '';// this stores which operator button was clicked
+let operatorClicked = '';//stores text of which operator button was clicked
 
 
 function clearCalculator() {//clears the number inputs
@@ -35,7 +35,7 @@ function handleSubmit() {//POST a set of numbers to server
     }).then(function (response) {
         console.log('response');
         getMathResults();
-        $('input').val('');
+        // $('input').val('');
     }).catch(function (error) {
         console.log(error);
     })

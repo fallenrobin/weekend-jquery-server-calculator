@@ -41,6 +41,7 @@ function runCalculation(taco) {
             break;
         case '-':
             answer = (inputOne - inputTwo);
+            break;
         case 'x':
             answer = (inputOne * inputTwo);
             break;
