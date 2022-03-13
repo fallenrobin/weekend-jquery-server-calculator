@@ -22,12 +22,12 @@ app.post('/mathResults', (req, res) => {
 
 app.get('/mathResults', (req, res) => {//
     console.log('GET mathResults');
-    res.send(answerHistory);//sends array of all past calculations
+    res.send(answerHistory);//sends array of only calculation answers 
 })
 
 app.get('/calculationHistory', (req, res) => {
     console.log('GET calculationHistory');
-    res.send(calculationHistory);
+    res.send(calculationHistory);//sends array of all past calculations including answer
 })
 
 //this will run the user input through the actual calculations
@@ -51,8 +51,8 @@ function runCalculation(taco) {
         default:
             break;
     }
-    answerHistory.push(answer);//pushes to array
-    calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);//pushes to array
+    answerHistory.push(answer);//pushes answer only to array (as string)
+    calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);//pushes calculation including answer to array (as string)
     // console.log(answerHistory);
     // console.log(calculationHistory);
 }

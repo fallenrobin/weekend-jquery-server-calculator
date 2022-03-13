@@ -35,7 +35,8 @@ function handleSubmit() {//POST a set of numbers to server
     }).then(function (response) {
         console.log('response');
         getMathResults();
-        // $('input').val('');
+        // $('input').val('');// I purposely whacked this so that inputs do NOT clear 
+        // unless cleared/changed manually
     }).catch(function (error) {
         console.log(error);
     })
@@ -49,40 +50,28 @@ function getMathResults() { //GET so as to append calculation answer to DOM
         method: 'GET'
     }).then(function (response) {
         console.log(response);
-        renderAnswer(response);
+        renderAnswer(response);//renders current answer
 
     }).catch(function (error) {
         console.log(error);
         alert('error in get!')
     })
-    $.ajax({
+    $.ajax({// First I had this in a separate function, but realized I could consolidate
+        // the second GET request into the same function
         url: '/calculationHistory',
         method: 'GET'
     }).then(function (response) {
         console.log(response);
-        renderAnswerHistory(response);
+        renderAnswerHistory(response);//renders each past problem (as prepend)
     })
 }
 
-function getCalculationHistory() {
-    $.ajax({
-        url: '/calculationHistory',
-        method: 'GET'
-    }).then(function (response) {
-        console.log(response);
-        // renderAnswerHistory(response);
-    }).catch(function (error) {
-        console.log(error);
-        alert('error in get!')
-    })
+function renderAnswer(response) {//for current answer
+    $('#answerSpan').text(response[response.length - 1]);//renders only the most recent answer (last index), as a string
 }
-
-function renderAnswer(response) {
-    $('#answerSpan').text(response[response.length - 1]);
-}
-function renderAnswerHistory(calculations) {
+function renderAnswerHistory(calculations) {//for history of past calculations
     $('#history').empty();
-    for (let calculation of calculations) {
+    for (let calculation of calculations) {//renders each string in the array
         $('#history').prepend(`
                 <h2>${calculation}<h2>
             `);
