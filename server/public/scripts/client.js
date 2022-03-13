@@ -3,29 +3,17 @@ $(handleReady);
 function handleReady() {
     console.log('jQ ready to roll!');
     $('#submitButton').on('click', handleSubmit);
-    $('#add').on('click', setAddition);
-    $('#subtract').on('click', setSubtraction);
-    $('#multiply').on('click', setMultiplication);
-    $('#divide').on('click', setDivision);
+    $('.operatorButton').on('click', setOperator);
     $('#clearButton').on('click', clearCalculator);
 
 }
 
-let operatorClicked = '';// this is a variable to store which operator button
-//  was clicked so it goes into the object for the server
-
-function setAddition() {//Note: if I have time, I'm going to refactor all these to use '.this'
-    operatorClicked = '+';
+function setOperator() {
+    operatorClicked = $(this).text();
 }
-function setSubtraction() {
-    operatorClicked = '-';
 
-} function setMultiplication() {
-    operatorClicked = '*';
+let operatorClicked = '';// this stores which operator button was clicked
 
-} function setDivision() {
-    operatorClicked = '/';
-}
 
 function clearCalculator() {//clears the number inputs
     $('input').val('');

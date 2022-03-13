@@ -15,16 +15,14 @@ app.use(express.static('server/public'));
 //this accepts the user inputs for a calculation
 app.post('/mathResults', (req, res) => {
     console.log('POST mathResults', req.body);
-    //res.sendStatus(200);//the 200 means "ok"
     res.sendStatus(201);//tells us something was created
-    // calculationHistory.push(req.body);
     // console.log(calculationHistory);
-    runCalculation(req.body);//this calls the actual math to run
+    runCalculation(req.body);//this calls the actual math to run, with user inputs
 })
 
-app.get('/mathResults', (req, res) => {
+app.get('/mathResults', (req, res) => {//
     console.log('GET mathResults');
-    res.send(answerHistory);
+    res.send(answerHistory);//sends array of all past calculations
 })
 
 app.get('/calculationHistory', (req, res) => {
@@ -52,17 +50,15 @@ function runCalculation(taco) {
         default:
             break;
     }
-    answerHistory.push(answer);
-    calculationHistory.push(`${inputOne}${button}${inputTwo}=${answer}`);
-    console.log(answerHistory);
-    console.log(calculationHistory);
+    answerHistory.push(answer);//pushes to array
+    calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);//pushes to array
+    // console.log(answerHistory);
+    // console.log(calculationHistory);
 }
 
 
 
-
-
-//starts the server 
+//starts the server! 
 app.listen(PORT, () => {
     console.log('Server is running on port', PORT)
 });
