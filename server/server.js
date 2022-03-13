@@ -40,29 +40,20 @@ function runCalculation(taco) {
     switch (button) {
         case '+':
             answer = inputOne + inputTwo;
-            answerHistory.push(answer);
-            calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
             break;
         case '-':
             answer = (inputOne - inputTwo);
-            answerHistory.push(answer);
-            calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
-            break;
         case 'x':
             answer = (inputOne * inputTwo);
-            answerHistory.push(answer);
-            calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
             break;
         case '÷':
             answer = (inputOne / inputTwo);
-            answerHistory.push(answer);
-            calculationHistory.push(`${inputOne} ${button} ${inputTwo} = ${answer}`);
             break;
         default:
             break;
     }
-    // answerHistory.push(answer);
-    // calculationHistory.push(`${inputOne}+${button}+${inputTwo}`);
+    answerHistory.push(answer);
+    calculationHistory.push(`${inputOne}${button}${inputTwo}=${answer}`);
     console.log(answerHistory);
     console.log(calculationHistory);
 }

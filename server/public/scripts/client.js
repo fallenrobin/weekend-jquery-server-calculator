@@ -62,7 +62,7 @@ function getMathResults() { //GET so as to append calculation answer to DOM
     }).then(function (response) {
         console.log(response);
         renderAnswer(response);
-        
+
     }).catch(function (error) {
         console.log(error);
         alert('error in get!')
@@ -70,10 +70,10 @@ function getMathResults() { //GET so as to append calculation answer to DOM
     $.ajax({
         url: '/calculationHistory',
         method: 'GET'
-}).then(function (response) {
-    console.log(response);
-    renderAnswerHistory(response);
-})
+    }).then(function (response) {
+        console.log(response);
+        renderAnswerHistory(response);
+    })
 }
 
 function getCalculationHistory() {
@@ -94,10 +94,10 @@ function renderAnswer(response) {
 }
 function renderAnswerHistory(calculations) {
     $('#history').empty();
-        for (let calculation of calculations) {
-            $('#history').prepend(`
+    for (let calculation of calculations) {
+        $('#history').prepend(`
                 <h2>${calculation}<h2>
             `);
-        }
+    }
 }
 
