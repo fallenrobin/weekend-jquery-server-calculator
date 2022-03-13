@@ -70,7 +70,6 @@ function getMathResults() { //GET so as to append calculation answer to DOM
     $.ajax({
         url: '/calculationHistory',
         method: 'GET'
-    // getCalculationHistory();
 }).then(function (response) {
     console.log(response);
     renderAnswerHistory(response);
@@ -97,7 +96,7 @@ function renderAnswerHistory(calculations) {
     $('#history').empty();
         for (let calculation of calculations) {
             $('#history').prepend(`
-                <li>${calculation}<li>
+                <h2>${calculation}<h2>
             `);
         }
  
