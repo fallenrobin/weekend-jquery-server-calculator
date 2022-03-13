@@ -1,3 +1,104 @@
 body {
-    margin: 20px;
+  margin: 20px;
+  background-color: blanchedalmond;
+}
+
+/* animation from: https://codepen.io/markmead/pen/rNOqRNw */
+.hello {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6vw;
+  -webkit-animation-name: wave;
+          animation-name: wave;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  font-family: "Righteous", cursive;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+}
+
+.hello:nth-of-type(1) {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0.55s;
+          animation-delay: 0.55s;
+}
+
+.hello:nth-of-type(2) {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.hello:nth-of-type(3) {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0.05s;
+          animation-delay: 0.05s;
+}
+
+.hello:nth-of-type(4) {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+
+@-webkit-keyframes wave {
+  40%, 50% {
+    transform: translate(-50%, -65%) scale(1.05);
+  }
+  0%, 90%, 100% {
+    transform: translate(-50%, -45%) scale(0.95);
+  }
+}
+
+@keyframes wave {
+  40%, 50% {
+    transform: translate(-50%, -65%) scale(1.05);
+  }
+  0%, 90%, 100% {
+    transform: translate(-50%, -45%) scale(0.95);
+  }
+}
+
+
+#clearButton:hover {
+  background-color: rgb(90, 83, 83);
+}
+
+/* .btn{
+   margin: 10px;
+} */
+input {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#allInputs {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid gray;
+  border-radius: 8px;
+  margin: auto;
+  width: 80%;
+  padding: 20px;
+}
+
+#inputElements {
+  margin: 30px;
+}
+
+#appends {
+  position: absolute;
+  top: 53%;
+  left: 20%;
+  transform: translate(-50%, -50%);
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,28 +9,39 @@
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <title>Calculator</title>
 </head>
-<h1>LET'S CALCULATE!</h1>
+<h3 class='hello' style='color: #7c4dff'>let's calculate</h3>
+    <h3 class='hello' style='color: #0091ea'>let's calculate</h3>
+    <h3 class='hello' style='color: #ff9100'>let's calculate</h3>
+    <h3 class='hello' style='color: #ff1744'>let's calculate</h3>
+<section id="allInputs">
+    <div id="inputElements" class="position-relative">
+        <input id="firstNumber" type="number">
 
-<input id="firstNumber" type="number">
+        <button type="button" class="operatorButton btn btn-info" id="add">+</button>
+        <button type="button" class="operatorButton btn btn-info" id="subtract">-</button>
+        <button type="button" class="operatorButton btn btn-info" id="multiply">x</button>
+        <button type="button" class="operatorButton btn btn-info" id="divide">÷</button>
 
-<button type="button" class= "operatorButton btn btn-info" id="add">+</button>
-<button type="button" class= "operatorButton btn btn-info" id="subtract">-</button>
-<button type="button" class= "operatorButton btn btn-info" id="multiply">x</button>
-<button type="button" class= "operatorButton btn btn-info" id="divide">÷</button>
+        <input id="secondNumber" type="number">
 
-<input id="secondNumber" type="number">
-
-<button class="btn btn-success" type="button" id="submitButton">=</button>
-<button class="btn btn-dark" type="button" id="clearButton">C</button>
-<p><h3>Answer: <span id= "answerSpan"></span></h3></p>
-<p><h4>Past problems:</h4>
+        <button class="btn btn-success" type="button" id="submitButton">=</button>
+        <button class="btn btn-dark" type="button" id="clearButton">C</button>
+    </div>
+</section>
+<section id="appends">
+<h3>Answer: <span id="answerSpan"></span></h3>
+</p>
+<p>
+<h4>Past problems:</h4>
 <p id="history">
 </p>
-</p>
+</section>
 
 <body>
-    
+
 </body>
+
 </html>
