@@ -74,9 +74,10 @@ function renderAnswer(response) {//for current answer
 function renderAnswerHistory(calculations) {//for history of past calculations
     $('#history').empty();
     for (let calculation of calculations) {//renders each string in the array
-        $('#history').prepend(`
-                <h2>${calculation}<h2>
-            `);
+        $('#history').prepend
+        (`
+        <h2>${calculation}<h2>
+        `);
     }
 }
 
