@@ -5,7 +5,7 @@ function handleReady() {
     $('#submitButton').on('click', handleSubmit);
     $('.operatorButton').on('click', setOperator);
     $('#clearButton').on('click', clearCalculator);
-    renderAnswerHistory();
+    getMathResults();
 }
 
 function setOperator() {//grabs the operator button text
