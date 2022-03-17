@@ -16,6 +16,10 @@ A couple of pitfalls I encountered a long the way were:
 
 - Two classmates had an identical problem of using inaccurate case strings for comparison in a switch conditional... this taught us a painful lesson in being absolutely sure that those case values being looked for must align PRECISELY with those of the variable being examined (eg, "*" and "x" will not register as a match, nor "x" and " x ").
 
+## See the calculator in action!
+
+https://tranquil-hollows-45605.herokuapp.com/
+
 ## Screen Shot
 
 ![Screenshot](server/public/screenshot.png?raw=true "Calculator screenshot")
